@@ -1,11 +1,18 @@
 import React from 'react';
+
+
 import { Link, useHistory } from 'react-router-dom';
 
 const Product = ({product}) => {
+// const[productItem ,setProductItem] = useState(null)
+
+
+
     const history = useHistory();
     const handleProduct =(_id)=>{
         const url = `/product/${_id}`
         history.push(url)
+        
     }
     return (
         <div className = "col-md-3" >
@@ -17,6 +24,7 @@ const Product = ({product}) => {
             {/* <Link to ={`/product/${product._id}`}> Buy Now</Link> */}
             <button className="btn btn-dark btn-lg" onClick ={()=>handleProduct(product._id)}>Buy Now</button>
            </div>
+           
            
         </div>
     );

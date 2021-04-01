@@ -16,18 +16,20 @@ const Orders = () => {
 
 const {productId} =useParams();
 const [product ,setProduct] = useState({});
+
+
 const handleCheckOut = () =>{
-    const orderDetails = {...loggedInUser, product: product, orderTime: new Date()}
+    const orderDetails = { user: loggedInUser.displayName, email: loggedInUser.email, ...product, orderTime: new Date()}
     console.log(orderDetails);
 
-    fetch('http://localhost:5000/orders', {
+    fetch('http://localhost:5000/addOrders', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json'},
         body: JSON.stringify(orderDetails)
     })
     .then(res => res.json())
-    .then(res => {
-      console.log(res)
+    .then(data => {
+      console.log(data)
     })
     
 }
@@ -42,6 +44,7 @@ const handleCheckOut = () =>{
 
     },[])
     
+
 
     return (
         <div>
@@ -64,7 +67,7 @@ const handleCheckOut = () =>{
   </tbody>
 
         </Table>
-        <Link className="btn btn-success" onClick={()=> handleCheckOut} to ="/orders">check Out</Link>
+        <Link to="/order" className="btn btn-success" onClick={handleCheckOut}>check Out</Link>
         </div>
         
     );

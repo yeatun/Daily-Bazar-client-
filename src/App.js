@@ -16,13 +16,14 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import Product from './Components/Product/Product';
 import ManageProduct from './Components/AddProducts/ManageProduct/ManageProduct';
+import Order from './Components/Order/Order';
 
 
 export const UserContext =createContext()
 
 function App() {
   const [loggedInUser, setLoggedInUser] = useState ({});
-  <p>name :{loggedInUser.email}</p>
+ 
 
   return ( <div className="App">
     <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
@@ -35,7 +36,7 @@ function App() {
             <Link to="/"><h1>Daily Bazar</h1></Link>
             <Link to="/">Home</Link>
         
-        <Link to="/orders">orders</Link>
+        <Link to="/order">orders</Link>
       
       
         <Link to="/AddProducts">Admin</Link>
@@ -52,7 +53,7 @@ function App() {
        
       </NavDropdown>
       
-        <Link > <p>{loggedInUser.email}</p></Link>
+        <Link > {loggedInUser.email}</Link>
             </nav>
            
           
@@ -75,7 +76,11 @@ function App() {
           </PrivateRoute>
           <PrivateRoute path="/ManageProduct">
             <ManageProduct />
-            
+
+          </PrivateRoute>
+          
+          <PrivateRoute path="/order">
+            <Order />
           </PrivateRoute>
           <Route path="/login">
             <Login />
