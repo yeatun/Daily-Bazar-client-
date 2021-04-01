@@ -12,6 +12,7 @@ const AllData = ({order}) => {
       <th>quantity</th>
       <th>wight</th>
       <th>time</th>
+      <th>email</th>
 
     </tr>
   </thead>
@@ -22,6 +23,7 @@ const AllData = ({order}) => {
       <td>1</td>
       <td>{order.wight}</td>
       <td>{order.orderTime}</td>
+      <td>{order.email}</td>
     </tr>
   </tbody>
 
