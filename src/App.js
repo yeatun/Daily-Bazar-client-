@@ -13,8 +13,8 @@ import Orders from './Components/Orders/Orders';
 import { createContext, useState } from 'react';
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Nav, Navbar, NavDropdown } from 'react-bootstrap';
-import Product from './Components/Product/Product';
+import { NavDropdown } from 'react-bootstrap';
+
 import ManageProduct from './Components/AddProducts/ManageProduct/ManageProduct';
 import Order from './Components/Order/Order';
 
@@ -40,18 +40,15 @@ function App() {
       
       
         <Link to="/AddProducts">Admin</Link>
-     
-      
-        <Link to="/login">login</Link>
 
-        <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-        <Link to="/AddProducts">AddProduct</Link>
-        <br/>
+        <NavDropdown title="Admin" id="basic-nav-dropdown">
+       
         <Link to="/manageProduct">ManageProduct</Link>
         
         <NavDropdown.Divider />
        
       </NavDropdown>
+      <Link to="/login">login</Link>
       
         <Link > {loggedInUser.email}</Link>
             </nav>

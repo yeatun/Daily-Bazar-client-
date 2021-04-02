@@ -10,6 +10,8 @@ const Product = ({product}) => {
 
     const history = useHistory();
     const handleProduct =(_id)=>{
+    
+
         const url = `/product/${_id}`
         history.push(url)
         
@@ -21,6 +23,7 @@ const Product = ({product}) => {
            <img style={{height : '200px'}} src={product.imageURL} alt=""/>
             <h3>{product.name}</h3>
             <h3><b>$ {product.price}</b></h3>
+
             {/* <Link to ={`/product/${product._id}`}> Buy Now</Link> */}
             <button className="btn btn-dark btn-lg" onClick ={()=>handleProduct(product._id)}>Buy Now</button>
            </div>

@@ -14,12 +14,19 @@ const Home = () => {
 
    
     return (
-        <div className ="row">
+        <div  >
+            {
+                products.length ===0 && <div class = "spinner-grow" role ="status">
+                    <span class ="sr-only">loading</span>
+                </div>
+            }
            
+            <div className ="row">
             {
                 products.map(product => <Product product ={product}></Product>)
             }
              
+            </div>
             
         </div>
     );

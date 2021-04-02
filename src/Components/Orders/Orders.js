@@ -55,6 +55,7 @@ const handleCheckOut = () =>{
       <th>product price</th>
       <th>quantity</th>
       <th>wight</th>
+     
     </tr>
   </thead>
   <tbody>
@@ -63,6 +64,7 @@ const handleCheckOut = () =>{
       <td>{product.price}</td>
       <td>1</td>
       <td>{product.wight}</td>
+      
     </tr>
   </tbody>
 
